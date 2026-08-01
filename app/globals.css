@@ -178,21 +178,30 @@ h1 { margin: 0; font-size: 48px; font-weight: 400; line-height: .97; letter-spac
 }
 
 @media (max-width: 800px) {
-  .hero-shell { min-height: 900px; height: 100svh; }
+  .hero-shell {
+    min-height: max(100svh, calc(620px + min(500px, 100vw)));
+    height: max(100svh, calc(620px + min(500px, 100vw)));
+  }
   .top-nav { grid-template-columns: 1fr auto; height: 64px; padding-inline: 20px; }
   .top-nav nav { display: none; }
   .nav-cta { min-height: 40px; padding: 8px 12px; }
   .content-rails { inset-inline: 20px; }
   .wave-pattern { inset: 64px 20px 0; }
-  .globe-stage { top: 72px; width: min(500px, 112vw); height: min(500px, 112vw); }
-  .hero-content { top: auto; bottom: 52px; width: calc(100% - 64px); flex-direction: column; align-items: stretch; gap: 36px; }
+  .globe-stage { top: 80px; width: min(500px, 100vw); height: min(500px, 100vw); }
+  .hero-content {
+    top: calc(96px + min(500px, 100vw));
+    bottom: auto;
+    width: calc(100% - 64px);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 36px;
+  }
   .headline-block, .details-block { width: 100%; }
   .details-block { transform: none; }
   h1 { font-size: clamp(40px, 11vw, 52px); }
 }
 
 @media (max-width: 420px) {
-  .hero-shell { min-height: 840px; }
   .hero-content { width: calc(100% - 48px); }
   .details-block > p { font-size: 14px; }
   .stats > div { padding-inline: 12px; }
