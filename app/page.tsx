@@ -8,7 +8,7 @@ export default function HomePage() {
     <main className="hero-shell">
       <header className="top-nav">
         <Link className="logo" href="#" aria-label="Origin home">
-          <span>O</span><span>O</span>
+          <img src="/logo-wordglobe.svg" alt="" width="40" height="28" />
         </Link>
         <nav aria-label="Primary navigation">
           {NAV_ITEMS.map((item) => <Link key={item} href={`#${item.toLowerCase()}`}>{item}</Link>)}
